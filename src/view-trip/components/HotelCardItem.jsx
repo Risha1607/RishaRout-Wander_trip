@@ -10,7 +10,7 @@ function HotelCardItem({ hotel }) {
     }, [hotel])
     const GetPlacePhoto = async () => {
         const data = {
-            textQuery: hotel?.HotelName
+            textQuery: hotel?.hotelName||hotel?.HotelName
         }
         const result = await GetPlaceDetails(data).then(resp => {
             console.log(resp.data.places[0].photos[3].name);
@@ -20,7 +20,7 @@ function HotelCardItem({ hotel }) {
     }
 
     return (
-        <Link to={'https://www.google.com/maps/search/?api=1&query=' + hotel.hotelName + "," + hotel?.["Hotel address"]} target='_blank'>
+        <Link to={'https://www.google.com/maps/search/?api=1&query=' + hotel?.hotelName||hotel?.HotelName + "," + hotel?.hotelAddress||hotel?.["Hotel Address"]} target='_blank'>
             <div className='hover:scale-105 transition-all cursor-pointer'>
                 {/* Use the actual image URL if available, otherwise fallback to placeholder */}
                 <img
@@ -29,10 +29,10 @@ function HotelCardItem({ hotel }) {
                     className='rounded-xl h-[180px] w-full object-cover'
                 />
                 <div className='my-2 flex flex-col gap-2'>
-                    <h2 className='font-medium'>{hotel?.HotelName || "Hotel Name Not Available"}</h2>
+                    <h2 className='font-medium'>{hotel?.hotelName || hotel?.HotelName}</h2>
                 
-                    <h2 className='text-xs text-gray-500'>📍{hotel["Hotel address"] || "Address Not Available"}</h2>
-                    <h2 className='text-sm'>💰{hotel?.Price || "N/A"}</h2>
+                    <h2 className='text-xs text-gray-500'>📍{hotel.hotelAddress || hotel?.["Hotel Address"]}</h2>
+                    <h2 className='text-sm'>💰{hotel?.price || hotel?.Price}</h2>
                     <h2 className='text-sm'>⭐{hotel?.rating}</h2>
                 </div>
             </div>

@@ -70,7 +70,7 @@ function CreateTrip() {
     }
     setLoading(true);
     const FINAL_PROMPT = AI_PROMPT
-      .replace('{location}', formData?.location?.label)
+      .replace('{location}', formData?.location)
       .replace('{totalDays}', formData?.noOfDays)
       .replace('{traveler}', formData?.traveler)
       .replace('{budget}', formData?.budget)
@@ -110,7 +110,10 @@ function CreateTrip() {
         console.log(resp);
         localStorage.setItem('user', JSON.stringify(resp.data));
         setOpenDialog(false);
+       
+
         OnGenerateTrip();
+       
       })
       .catch((error) => {
         console.error("Error fetching user profile:", error);

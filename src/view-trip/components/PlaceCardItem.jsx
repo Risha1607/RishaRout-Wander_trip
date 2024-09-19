@@ -38,8 +38,8 @@ function PlaceCardItem({ place }) {
         />
         <div className='flex-grow'>
           <h2 className='font-bold text-lg'>{place.placeName}</h2>
-          <p className='text-sm text-gray-400'>{place?.["Place Details"]}</p>
-          <h2 className='mt-2'>🕙{place?.["Time to travel"]}</h2>
+          <p className='text-sm text-gray-400'>{place?.placeDetails||place?.["Place Details"]}</p>
+          <h2 className='mt-2'>🕙{place?.timeToTravel||place?.["Time to travel"]}</h2>
           <Button size="sm"><FaMapLocationDot /></Button>
         </div>
       </div>

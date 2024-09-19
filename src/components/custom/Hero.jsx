@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 function Hero() {
   return (
     <div className='flex flex-col items-center mx-56 gap-9'>
-      <h1 className='font-extrabold text-[46px] text-center mt-16'>
-        <span className='text-[#4844bc]'>
-          Discover Your Next Adventure with AI:
+      <h1 className='font-extrabold text-[40px] text-center mt-16'>
+        <span className='text-[#5417D7]'>
+          Your Jouney , Your Way :
         </span><br></br>
         Personalised Itineraries at your Fingersteps
       </h1>
-      <p className='text-xl text-gray-500 text-center'>
+      <p className='text-xl text-gray-500 text-center '>
         Your personal trip planner and travel curator, creating custom itineraries tailored to your interests and budget.
       </p>
       <Link to='/create-trip'>
