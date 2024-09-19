@@ -20,7 +20,7 @@ function PlaceCardItem({ place }) {
         const PhotoUrl = PHOTO_REF_URL.replace('{NAME}', resp.data.places[0].photos[3].name)
         setPhotoUrl(PhotoUrl);
       } else {
-        // Fallback to a default image or placeholder
+        
         setPhotoUrl('/path-to-placeholder.jpg');
       }
     });

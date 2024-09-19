@@ -22,7 +22,7 @@ function HotelCardItem({ hotel }) {
     return (
         <Link to={'https://www.google.com/maps/search/?api=1&query=' + hotel?.hotelName||hotel?.HotelName + "," + hotel?.hotelAddress||hotel?.["Hotel Address"]} target='_blank'>
             <div className='hover:scale-105 transition-all cursor-pointer'>
-                {/* Use the actual image URL if available, otherwise fallback to placeholder */}
+             
                 <img
                     src={photoUrl}
 
